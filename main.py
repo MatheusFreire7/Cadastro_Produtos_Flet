@@ -1,8 +1,6 @@
 from flet import *
 import random
 import datetime
-import os
-
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
@@ -107,7 +105,6 @@ def main(page):
 
     page.overlay.append(file_saver)
 
-
     def buildMeuPedido(e):
         Mdialog = AlertDialog(
             title=Text("Nota dos Pedidos", size=30, weight="bold"),
@@ -122,7 +119,7 @@ def main(page):
                 ]),
                
                 Row([
-                    Text("Endereço do Cliente", weight="bold"),
+                    Text("Endereço do Cliente: ", weight="bold", size=25),
                     Text(con_input.content.controls[1].value, weight="bold", size=25),
                 ],),
                 
@@ -153,4 +150,3 @@ def main(page):
     )
 
 app(target=main)
-
